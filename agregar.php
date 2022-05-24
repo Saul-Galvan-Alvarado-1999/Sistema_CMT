@@ -16,6 +16,8 @@ include 'db.php';
     $sexo = $_POST["sexo"];
     $curp = $_POST["curp"];
     $nss = $_POST["nss"];
+    $obra = $_POST["obra"];
+    $puesto = $_POST["puesto"];
     $doc_curp = addslashes(file_get_contents($_FILES['doc_curp']['tmp_name']));
     $doc_comprobante = addslashes(file_get_contents($_FILES["doc_comprobante"]['tmp_name']));
     $doc_nss = addslashes(file_get_contents($_FILES["doc_nss"]['tmp_name']));
@@ -24,9 +26,9 @@ include 'db.php';
     //Preparamos la orden SQL
     $consulta = "INSERT INTO empleados
     (nombre, apellido_paterno, apellido_materno, correo, celular, telefono, direccion, codigo_postal,
-     delegacion_o_municipio, estado, fecha_nacimiento, sexo, curp, nss, doc_curp, doc_comprobante, doc_nss, doc_ine, foto) 
+     delegacion_o_municipio, estado, fecha_nacimiento, sexo, curp, nss, obra, puesto, doc_curp, doc_comprobante, doc_nss, doc_ine, foto) 
     VALUES ('$nombre','$apellido_paterno','$apellido_materno','$correo','$celular','$telefono','$direccion',
-    '$codigo_postal','$delegacion_o_municipio','$estado','$fecha_nacimiento','$sexo','$curp','$nss','$doc_curp',
+    '$codigo_postal','$delegacion_o_municipio','$estado','$fecha_nacimiento','$sexo','$curp','$nss', '$obra', '$puesto', '$doc_curp',
     '$doc_comprobante','$doc_nss','$doc_ine','$foto')";
 
     $resultado = mysqli_query($conexion,$consulta);
