@@ -55,7 +55,7 @@ $pdf->Cell(90,5,'',0,1,'C',1);
 
 $foto     = $row['foto'];
 $ext = explode('.',$foto);
-$pdf->Image('images/picture.png', 12, 27, 25, 32.5);
+$pdf->Image('images/picture.png', 13, 27, 25, 32.5);
 //Pate tracera
 $pdf->Image('images/tracero.PNG', 110, 10, 90, 56);
 
